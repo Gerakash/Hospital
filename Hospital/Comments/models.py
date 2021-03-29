@@ -11,6 +11,4 @@ class Comment(models.Model):
     text = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        verbose_name = 'Comments'
-        verbose_name_plural = 'Comments'
+

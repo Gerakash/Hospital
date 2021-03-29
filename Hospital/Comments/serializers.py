@@ -1,6 +1,8 @@
-from rest_framework.fields import CharField
+from rest_framework.fields import CharField, SerializerMethodField
 from rest_framework.serializers import ModelSerializer, Serializer
 
+from Hospitals.models import Doctor
+from Hospitals.serializers import DoctorSerializer
 from .models import Comment
 
 
@@ -12,7 +14,22 @@ class CommentSerializer(ModelSerializer):
 
 class CommentCreateSerializer(Serializer):
     text = CharField(allow_blank=False)
-    pass
+
+
+
+
+class DoctorDetailSerializer(ModelSerializer):
+    comment_set = CommentSerializer(many=True)
+
+
+    class Meta:
+        model = Doctor
+        fields = '__all__'
+
+
+
+
+
 
 
 

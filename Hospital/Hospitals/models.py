@@ -12,7 +12,8 @@ class Hospital(models.Model):
     address = models.CharField(max_length=100,blank=False)
     contact = models.IntegerField(default=0)
     email = models.CharField(max_length=100,blank=True)
-
+    rating = models.IntegerField(default=0)
+    category = models.CharField(max_length=10,choices=categories,default='goverment')
 
 
 class Department(models.Model):
@@ -29,6 +30,7 @@ class Department(models.Model):
 
 class Doctor(models.Model):
     occupation = models.CharField(max_length=100)
+    rating = models.IntegerField(default=0)
     image = models.ImageField()
     full_name = models.CharField(max_length=200)
     education = models.CharField(max_length=200)

@@ -21,5 +21,5 @@ urlpatterns = [
     path('',include('Hospitals.urls')),
     path('',include('Clients.urls')),
     path('',include('Rates.urls')),
-    # path('',include('Comments.urls'))
+    path('',include('Comments.urls'))
 ]
